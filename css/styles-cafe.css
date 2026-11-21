@@ -1,0 +1,252 @@
+:root {
+    color-scheme: light;
+    --color-primario: #5b3825;
+    --color-primario-hover: #422719;
+    --color-secundario: #8a5a3b;
+    --color-fondo: #f3eadf;
+    --color-superficie: #fffaf4;
+    --color-acento: #e6d3bd;
+    --color-texto: #34251d;
+    --color-texto-suave: #665449;
+    --sombra: 0 0.25rem 0.75rem rgb(52 37 29 / 14%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+.header {
+    background-color: var(--color-primario);
+    color: var(--color-superficie);
+    padding-block: 1rem;
+}
+
+.header__contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    color: inherit;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav__lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav__lista a {
+    display: block;
+    padding: 0.55rem 0.85rem;
+    border-radius: 0.4rem;
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.nav__lista a:hover,
+.nav__lista a:focus-visible {
+    background-color: var(--color-secundario);
+}
+
+.nav__lista a:focus-visible,
+.boton:focus-visible {
+    outline: 0.18rem solid var(--color-acento);
+    outline-offset: 0.15rem;
+}
+
+.hero {
+    padding-block: 2rem;
+    background-color: var(--color-acento);
+}
+
+.hero__contenido {
+    display: grid;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.hero__texto h1 {
+    margin: 0 0 0.75rem;
+    color: var(--color-primario);
+    font-size: clamp(2rem, 6vw, 3.25rem);
+    line-height: 1.15;
+}
+
+.hero__texto p {
+    max-width: 38rem;
+    margin: 0 0 1.25rem;
+    color: var(--color-texto-suave);
+    font-size: 1.05rem;
+}
+
+.hero__imagen {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 0.75rem;
+    object-fit: cover;
+}
+
+.boton {
+    display: inline-block;
+    padding: 0.7rem 1.2rem;
+    border: 0;
+    border-radius: 0.4rem;
+    background-color: var(--color-primario);
+    color: var(--color-superficie);
+    font: inherit;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.boton:hover {
+    background-color: var(--color-primario-hover);
+}
+
+.productos {
+    padding-block: 2.5rem;
+}
+
+.productos h2,
+.contacto h2 {
+    margin: 0 0 1.5rem;
+    color: var(--color-primario);
+    font-size: clamp(1.7rem, 4vw, 2.25rem);
+    text-align: center;
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+    gap: 1.25rem;
+}
+
+.tarjeta {
+    overflow: hidden;
+    border-radius: 0.65rem;
+    background-color: var(--color-superficie);
+    box-shadow: var(--sombra);
+}
+
+.tarjeta img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
+.tarjeta__cuerpo {
+    padding: 1rem;
+}
+
+.tarjeta__cuerpo h3 {
+    margin: 0 0 0.35rem;
+    color: var(--color-primario);
+    font-size: 1.3rem;
+}
+
+.tarjeta__cuerpo p {
+    margin: 0 0 0.75rem;
+    color: var(--color-texto-suave);
+}
+
+.precio {
+    color: var(--color-secundario);
+    font-weight: 700;
+}
+
+.contacto {
+    padding-block: 2.5rem;
+    background-color: var(--color-acento);
+}
+
+.contacto__grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.contacto__bloque {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--color-superficie);
+}
+
+.contacto__bloque h3 {
+    margin: 0 0 0.25rem;
+    color: var(--color-primario);
+}
+
+.contacto__bloque p {
+    margin: 0;
+    color: var(--color-texto-suave);
+}
+
+.footer {
+    padding: 1rem;
+    background-color: var(--color-primario);
+    color: var(--color-superficie);
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+}
+
+@media (min-width: 48rem) {
+    .header__contenido {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .hero {
+        padding-block: 3.5rem;
+    }
+
+    .hero__contenido {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+    }
+
+    .contacto__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 64rem) {
+    .tarjetas {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
